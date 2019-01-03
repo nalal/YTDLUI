@@ -17,7 +17,7 @@ namespace YoutubeDL_UI
                 {
                     if (i.Contains(".exe") != true)
                     {
-                        File.Move(i, Form1.localMD);
+                        File.Move(Path.Combine(Form1.localD, i), Path.Combine(Form1.localMD, i));
                     }
                 }
             }
@@ -25,9 +25,9 @@ namespace YoutubeDL_UI
             {
                 foreach (string i in files)
                 {
-                    if (i.Contains(".exe") != true)
+                    if (i.Contains(".exe") != true && i.Contains(".pdb") != true)
                     {
-                        File.Move(i, Form1.localVD);
+                        File.Move(Path.Combine(Form1.localD, i), Path.Combine(Form1.localMD, i));
                     }
                 }
             }

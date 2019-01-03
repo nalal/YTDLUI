@@ -44,6 +44,7 @@
             this.LBURLs.Name = "LBURLs";
             this.LBURLs.Size = new System.Drawing.Size(256, 407);
             this.LBURLs.TabIndex = 0;
+            this.LBURLs.SelectedIndexChanged += new System.EventHandler(this.LBURLs_SelectedIndexChanged);
             // 
             // BAdd
             // 

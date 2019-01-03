@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
 
 /*
     Application:    Youtube-DL UI Integration for windows
@@ -33,6 +34,8 @@ namespace YoutubeDL_UI
         //Init Directories on load
         private void Form1_Load(object sender, EventArgs e)
         {
+            WebClient client = new WebClient();
+            client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", localP);
             Directory.CreateDirectory(localAD);
             Directory.CreateDirectory(localMD);
             Directory.CreateDirectory(localVD);
@@ -65,7 +68,7 @@ namespace YoutubeDL_UI
                     string LDLType = DLType.DLT;
                     ListMan.initListA(LURL, LDLType);
                     DLMan.DLA(ListMan.URLA, ListMan.Args);
-                    FileIO.cleaner();
+                    //FileIO.cleaner();
                     MessageBox.Show("Your files have been downloaded.", "Opperation Complete");
                 }
                 else if (totalList == 1)
@@ -74,7 +77,7 @@ namespace YoutubeDL_UI
                     string LDLType = DLType.DLT;
                     ListMan.initList(LURL, LDLType);
                     DLMan.DLS(ListMan.URL, ListMan.Args);
-                    FileIO.cleaner();
+                    //FileIO.cleaner();
                     MessageBox.Show("Your files have been downloaded.", "Opperation Complete");
                 }
                 //"It could never happen" is not an excuse to not be ready for it
@@ -96,6 +99,11 @@ namespace YoutubeDL_UI
            Form DLTF = new DLType();
            DLTF.ShowDialog();
            LBDLT.Text = DLType.DLT;
+        }
+
+        private void LBURLs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
