@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace YoutubeDL_UI
 {
@@ -18,14 +20,8 @@ namespace YoutubeDL_UI
             Directory.CreateDirectory(Form1.localVD);
         }
         //Get Youtube-DL.exe
-        public static void appGet()
-        {
-            if (File.Exists(Form1.localP) == false)
-            {
-                WebClient client = new WebClient();
-                client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", Form1.localP);
-            }
-        }
+
+
         //WIP block
         public static void cleaner()
         {

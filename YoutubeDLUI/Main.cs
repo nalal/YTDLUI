@@ -35,7 +35,11 @@ namespace YoutubeDL_UI
         private void Form1_Load(object sender, EventArgs e)
         {
             FileIO.DIRInit();
-            FileIO.appGet();
+            if (File.Exists(localP) == false)
+            {
+                Form dl = new DLProgress();
+                dl.ShowDialog();
+            }
             LBDLT.Text = "None";
         }
         //Add URL to list
