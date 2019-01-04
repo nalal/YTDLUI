@@ -34,11 +34,8 @@ namespace YoutubeDL_UI
         //Init Directories on load
         private void Form1_Load(object sender, EventArgs e)
         {
-            WebClient client = new WebClient();
-            client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", localP);
-            Directory.CreateDirectory(localAD);
-            Directory.CreateDirectory(localMD);
-            Directory.CreateDirectory(localVD);
+            FileIO.DIRInit();
+            FileIO.appGet();
             LBDLT.Text = "None";
         }
         //Add URL to list

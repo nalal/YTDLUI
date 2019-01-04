@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
+
 namespace YoutubeDL_UI
 {
     class FileIO
@@ -31,6 +33,17 @@ namespace YoutubeDL_UI
                     }
                 }
             }
+        }
+        public static void DIRInit()
+        {
+            Directory.CreateDirectory(Form1.localAD);
+            Directory.CreateDirectory(Form1.localMD);
+            Directory.CreateDirectory(Form1.localVD);
+        }
+        public static void appGet()
+        {
+            WebClient client = new WebClient();
+            client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", Form1.localP);
         }
     }
 }
