@@ -10,6 +10,23 @@ namespace YoutubeDL_UI
 {
     class FileIO
     {
+        //Init directories
+        public static void DIRInit()
+        {
+            Directory.CreateDirectory(Form1.localAD);
+            Directory.CreateDirectory(Form1.localMD);
+            Directory.CreateDirectory(Form1.localVD);
+        }
+        //Get Youtube-DL.exe
+        public static void appGet()
+        {
+            if (File.Exists(Form1.localP) == false)
+            {
+                WebClient client = new WebClient();
+                client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", Form1.localP);
+            }
+        }
+        //WIP block
         public static void cleaner()
         {
             string[] files = Directory.GetFiles(Form1.localD);
@@ -33,17 +50,6 @@ namespace YoutubeDL_UI
                     }
                 }
             }
-        }
-        public static void DIRInit()
-        {
-            Directory.CreateDirectory(Form1.localAD);
-            Directory.CreateDirectory(Form1.localMD);
-            Directory.CreateDirectory(Form1.localVD);
-        }
-        public static void appGet()
-        {
-            WebClient client = new WebClient();
-            client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", Form1.localP);
         }
     }
 }
