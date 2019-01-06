@@ -35,6 +35,7 @@ namespace YoutubeDL_UI
         private void Form1_Load(object sender, EventArgs e)
         {
             FileIO.DIRInit();
+            //Yeah it's ugly but it works
             if (File.Exists(localP) == false)
             {
                 Form dl = new DLProgress();
@@ -69,8 +70,8 @@ namespace YoutubeDL_UI
                     string LDLType = DLType.DLT;
                     ListMan.initListA(LURL, LDLType);
                     DLMan.DLA(ListMan.URLA, ListMan.Args);
+                    BSDL.Enabled = true;
                     //FileIO.cleaner();
-                    MessageBox.Show("Your files have been downloaded.", "Opperation Complete");
                 }
                 else if (totalList == 1)
                 {
@@ -78,8 +79,8 @@ namespace YoutubeDL_UI
                     string LDLType = DLType.DLT;
                     ListMan.initList(LURL, LDLType);
                     DLMan.DLS(ListMan.URL, ListMan.Args);
+                    BSDL.Enabled = true;
                     //FileIO.cleaner();
-                    MessageBox.Show("Your files have been downloaded.", "Opperation Complete");
                 }
                 //"It could never happen" is not an excuse to not be ready for it
                 else if (totalList < 0)
@@ -105,6 +106,14 @@ namespace YoutubeDL_UI
         private void LBURLs_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BSDL_Click(object sender, EventArgs e)
+        {
+            if (LBDLT.Text != "none")
+            {
+                FileIO.cleaner();
+            }
         }
     }
 }
