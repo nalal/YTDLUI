@@ -16,8 +16,8 @@ namespace YoutubeDL_UI
         public static void DIRInit()
         {
             Directory.CreateDirectory(Form1.localAD);
-            Directory.CreateDirectory(Form1.localMD);
-            Directory.CreateDirectory(Form1.localVD);
+            //Directory.CreateDirectory(Form1.localMD);
+            //Directory.CreateDirectory(Form1.localVD);
         }
         //Get Youtube-DL.exe
 
