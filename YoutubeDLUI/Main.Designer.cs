@@ -35,6 +35,7 @@
             this.BDLType = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.LBDLT = new System.Windows.Forms.Label();
+            this.BSDL = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LBURLs
@@ -105,11 +106,23 @@
             this.LBDLT.TabIndex = 6;
             this.LBDLT.Text = "label2";
             // 
+            // BSDL
+            // 
+            this.BSDL.Enabled = false;
+            this.BSDL.Location = new System.Drawing.Point(274, 335);
+            this.BSDL.Name = "BSDL";
+            this.BSDL.Size = new System.Drawing.Size(75, 39);
+            this.BSDL.TabIndex = 7;
+            this.BSDL.Text = "Sort Downloaded";
+            this.BSDL.UseVisualStyleBackColor = true;
+            this.BSDL.Click += new System.EventHandler(this.BSDL_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 430);
+            this.Controls.Add(this.BSDL);
             this.Controls.Add(this.LBDLT);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BDLType);
@@ -134,6 +147,7 @@
         private System.Windows.Forms.Button BDLType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LBDLT;
+        private System.Windows.Forms.Button BSDL;
     }
 }
 

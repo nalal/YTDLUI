@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DLMan.cs" />
+    <Compile Include="DLProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DLProgress.Designer.cs">
+      <DependentUpon>DLProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="DLType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DLProgress.resx">
+      <DependentUpon>DLProgress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DLType.resx">
       <DependentUpon>DLType.cs</DependentUpon>
     </EmbeddedResource>

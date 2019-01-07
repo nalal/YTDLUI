@@ -5,11 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace YoutubeDL_UI
 {
     class FileIO
     {
+        //Init directories
+        public static void DIRInit()
+        {
+            Directory.CreateDirectory(Form1.localAD);
+            //Directory.CreateDirectory(Form1.localMD);
+            //Directory.CreateDirectory(Form1.localVD);
+        }
+        //Get Youtube-DL.exe
+
+
+        //WIP block
+        //Don't use, file doesn't move and doesn't print error because fuck you
         public static void cleaner()
         {
             string[] files = Directory.GetFiles(Form1.localD);
@@ -17,7 +31,7 @@ namespace YoutubeDL_UI
             {
                 foreach (string i in files)
                 {
-                    if (i.Contains(".exe") != true)
+                    if (i.Contains(".exe") != true && i.Contains(".pdb") != true)
                     {
                         File.Move(Path.Combine(Form1.localD, i), Path.Combine(Form1.localMD, i));
                     }
@@ -33,17 +47,6 @@ namespace YoutubeDL_UI
                     }
                 }
             }
-        }
-        public static void DIRInit()
-        {
-            Directory.CreateDirectory(Form1.localAD);
-            Directory.CreateDirectory(Form1.localMD);
-            Directory.CreateDirectory(Form1.localVD);
-        }
-        public static void appGet()
-        {
-            WebClient client = new WebClient();
-            client.DownloadFile("https://yt-dl.org/downloads/2019.01.02/youtube-dl.exe", Form1.localP);
         }
     }
 }
