@@ -13,7 +13,7 @@ namespace YoutubeDL_UI
     public partial class DLType : Form
     {
         //Init public DLT string for type verification
-        public static string DLT = "";
+        public static string DLT = null;
         public DLType()
         {
             InitializeComponent();

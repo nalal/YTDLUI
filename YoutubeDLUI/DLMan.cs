@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace YoutubeDL_UI
 {
@@ -17,11 +18,22 @@ namespace YoutubeDL_UI
                 foreach (string i in URL)
                 {
                     string argset = args + " " + i;
-                    ProcessStartInfo startInfo = new ProcessStartInfo();
-                    startInfo.FileName = Form1.localP;
-                    startInfo.Arguments = argset;
-                    Process.Start(startInfo);
+                    var start = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = Form1.localP,
+                            Arguments = argset
+                        }
+                    };
+                    start.Start();
+                    start.WaitForExit();
+                    FileIO.cleaner();
                 }
+            }
+            else
+            {
+                MessageBox.Show("INPUT ERROR","INPUT ERROR");
             }
         }
         //Run youtube-DL for single URL
@@ -30,10 +42,21 @@ namespace YoutubeDL_UI
             if (Err.isNull(args) == true)
             {
                 string argset = args + " " + URL;
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = Form1.localP;
-                startInfo.Arguments = argset;
-                Process.Start(startInfo);
+                var start = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = Form1.localP,
+                        Arguments = argset
+                    }
+                };
+                start.Start();
+                start.WaitForExit();
+                FileIO.cleaner();
+            }
+            else
+            {
+                MessageBox.Show("INPUT ERROR", "INPUT ERROR");
             }
         }
     }
