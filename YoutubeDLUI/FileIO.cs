@@ -23,6 +23,7 @@ namespace YoutubeDL_UI
 
 
         //WIP block
+        //Don't use, file doesn't move and doesn't print error because fuck you
         public static void cleaner()
         {
             string[] files = Directory.GetFiles(Form1.localD);
@@ -30,7 +31,7 @@ namespace YoutubeDL_UI
             {
                 foreach (string i in files)
                 {
-                    if (i.Contains(".exe") != true)
+                    if (i.Contains(".exe") != true && i.Contains(".pdb") != true)
                     {
                         File.Move(Path.Combine(Form1.localD, i), Path.Combine(Form1.localMD, i));
                     }

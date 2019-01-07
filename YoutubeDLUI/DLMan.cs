@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,6 +29,7 @@ namespace YoutubeDL_UI
                     };
                     start.Start();
                     start.WaitForExit();
+                    Thread.Sleep(4000);
                     FileIO.cleaner();
                 }
             }
@@ -52,6 +54,7 @@ namespace YoutubeDL_UI
                 };
                 start.Start();
                 start.WaitForExit();
+                Thread.Sleep(4000);
                 FileIO.cleaner();
             }
             else
