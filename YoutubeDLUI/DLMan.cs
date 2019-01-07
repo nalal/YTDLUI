@@ -30,7 +30,7 @@ namespace YoutubeDL_UI
                     start.Start();
                     start.WaitForExit();
                     Thread.Sleep(4000);
-                    FileIO.cleaner();
+                    //FileIO.cleaner();
                 }
             }
             else
@@ -55,7 +55,7 @@ namespace YoutubeDL_UI
                 start.Start();
                 start.WaitForExit();
                 Thread.Sleep(4000);
-                FileIO.cleaner();
+                //FileIO.cleaner();
             }
             else
             {
